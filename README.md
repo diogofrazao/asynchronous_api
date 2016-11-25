@@ -33,8 +33,14 @@ $ POST http://localhost:3000/remove
 $ Get http://localhost:3000/info
 
 ```
-| Status Code   | Description   | 
-| ------------- |:-------------:|
-| 200           | OK            | 
-| 409           | TODO          | 
-| 422           | TODO          | 
+| Status Code   | Description    | 
+| ------------- |:--------------:|
+| 200           | OK             | 
+| 201           | Created        | 
+| 400           | Bad Request    | 
+| 404           | URL Not Found  | 
+| 409           | TODO           | 
+| 422           | TODO           | 
+| 500           | Internal Error | 
+
+
