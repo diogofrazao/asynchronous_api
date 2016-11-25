@@ -17,6 +17,8 @@ $ POST http://localhost:3000/create
 
 ```
 
+
+
 ```
 $ POST http://localhost:3000/remove
 
@@ -31,3 +33,8 @@ $ POST http://localhost:3000/remove
 $ Get http://localhost:3000/info
 
 ```
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
