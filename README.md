@@ -33,8 +33,8 @@ $ POST http://localhost:3000/remove
 $ Get http://localhost:3000/info
 
 ```
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Status Code   | Description   | 
+| ------------- |:-------------:|
+| 200           | OK            | 
+| col 2 is      | 409           | 
+| zebra stripes | 422           | 
