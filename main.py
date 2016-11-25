@@ -37,9 +37,9 @@ def create():
     worker_id = cantor_function(json_id, type_id)
     if find_worker(worker_id) is None:
         start_worker(worker_id)
-        return jsonify(worker_id)
+        return jsonify(worker_id), 201
     else:
-        return abort(409)
+        return jsonify("Duplicated Worker"), 409
 
 @app.route("/remove", methods=['POST'])
 def remove():
@@ -47,7 +47,7 @@ def remove():
     worker_id = content["worker_id"]
     worker = remove_worker(worker_id)
     if worker is None:
-        return abort(422)
+        return jsonify("Worker ID not found"), 422
     else:
         return jsonify(worker_id)
 
