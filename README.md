@@ -16,3 +16,18 @@ $ POST http://localhost:3000/create
 }
 
 ```
+
+```
+$ POST http://localhost:3000/remove
+
+{
+  "worker_id": 1
+}
+
+```
+
+
+```
+$ Get http://localhost:3000/info
+
+```
