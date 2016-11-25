@@ -36,5 +36,5 @@ $ Get http://localhost:3000/info
 | Status Code   | Description   | 
 | ------------- |:-------------:|
 | 200           | OK            | 
-| col 2 is      | 409           | 
-| zebra stripes | 422           | 
+| 409           | TODO          | 
+| 422           | TODO          | 
