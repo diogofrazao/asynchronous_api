@@ -41,12 +41,12 @@ $ Get http://localhost:3000/info
 | 404           | URL Not Found     | 
 | 409           | Duplicated Worker |  
 | 422           | Worker not found  | 
-| 500           | Internal Error    | 
+| 500           | Internal Error    |
 
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Tables        | Are           |
+| ------------- |:-------------:|
+| col 3 is      | right-aligned |
+| col 2 is      | centered      |
+| zebra stripes | are neat      |    
 
