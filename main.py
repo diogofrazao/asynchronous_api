@@ -25,8 +25,8 @@ def remove_worker(worker):
             return True
     return False
 
-def start_worker(worker_id, collection):
-    thread = Worker(worker_id, collection)
+def start_worker(worker_id):
+    thread = Worker(worker_id)
     thread.start()
     workers_array.append(thread)
 
@@ -37,7 +37,7 @@ def create():
     type_id = content["type_id"]
     worker_id = cantor_function(json_id, type_id)
     if find_worker(worker_id) is None:
-        start_worker(worker_id, collection)
+        start_worker(worker_id)
         return jsonify(worker_id), 201
     else:
         return jsonify("Duplicated Worker"), 409
