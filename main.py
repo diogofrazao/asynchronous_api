@@ -15,17 +15,18 @@ def find_worker(worker_id):
             return worker
     return None
 
-def remove_worker(worker_id):
-    worker = find_worker(worker_id)
-    if worker is None:
-        return None
-    else:
-        worker.signal = False
-        workers_array.remove(worker);
-        return worker
+def remove_worker(worker):
+    for x in xrange(3):
+        print "Try number: "+str(x)
+        worker.stop()
+        time.sleep(0.3)
+        if not worker.isAlive():
+            workers_array.remove(worker)
+            return True
+    return False
 
-def start_worker(worker_id):
-    thread = Worker(worker_id)
+def start_worker(worker_id, collection):
+    thread = Worker(worker_id, collection)
     thread.start()
     workers_array.append(thread)
 
@@ -36,7 +37,7 @@ def create():
     type_id = content["type_id"]
     worker_id = cantor_function(json_id, type_id)
     if find_worker(worker_id) is None:
-        start_worker(worker_id)
+        start_worker(worker_id, collection)
         return jsonify(worker_id), 201
     else:
         return jsonify("Duplicated Worker"), 409
@@ -45,11 +46,14 @@ def create():
 def remove():
     content = request.json
     worker_id = content["worker_id"]
-    worker = remove_worker(worker_id)
+    worker = find_worker(worker_id)
     if worker is None:
         return jsonify("Worker ID not found"), 422
     else:
-        return jsonify(worker_id)
+        if remove_worker(worker):
+            return jsonify(worker_id)
+        else:
+            return "nao deu"
 
 @app.route("/info")
 def info():
